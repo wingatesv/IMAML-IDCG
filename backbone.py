@@ -698,57 +698,57 @@ def ResNet10( flatten = True):
     return ResNet(SimpleBlock, [1,1,1,1],[64,128,256,512], flatten)
 
 def ResNet18( flatten = True, method=None):
-   if method == 'mammo':
+   if method == 'imaml_idcg':
       return ResNet_ImageNet(flatten = True, model = 'resnet18', frozen=True, layers=6)
    else:
       return ResNet(SimpleBlock, [2,2,2,2],[64,128,256,512], flatten)
 
 def ResNet34( flatten = True, method=None):
-    if method == 'mammo':
+    if method == 'imaml_idcg':
       return ResNet_ImageNet(flatten = True, model = 'resnet34', frozen=True, layers=6)
     else:
       return ResNet(SimpleBlock, [3,4,6,3],[64,128,256,512], flatten)
 
 def ResNet50( flatten = True, method=None):
-    if method == 'mammo':
+    if method == 'imaml_idcg':
         return ResNet_ImageNet(flatten = True, model = 'resnet50', frozen=True, layers=6)
     else:
         return ResNet(BottleneckBlock, [3,4,6,3], [256,512,1024,2048], flatten)
 
 def ResNet101( flatten = True, method=None):
-    if method == 'mammo':
+    if method == 'imaml_idcg':
           return ResNet_ImageNet(flatten = True, model = 'resnet101', frozen=True, layers=6)
     else:
           return ResNet(BottleneckBlock, [3,4,23,3],[256,512,1024,2048], flatten)
 
 def DenseNet201(flatten=True, frozen=True, model='densenet201', method=None):
-    if method == 'mammo':
+    if method == 'imaml_idcg':
         return DenseNet_ImageNet(flatten=True, model=model, frozen=True, layers=6)
     else:
-      raise AssertionError('Only MAMMO is supported')
+      raise AssertionError('Only imaml_idcg is supported')
 
 
 def DenseNet161(flatten=True, frozen=True, model='densenet161', method=None):
-    if method == 'mammo':
+    if method == 'imaml_idcg':
         return DenseNet_ImageNet(flatten=True, model=model, frozen=True, layers=6)
     else:
-      raise AssertionError('Only MAMMO is supported')
+      raise AssertionError('Only imaml_idcg is supported')
 
 
 def EffNet(flatten = True, frozen=True, method=None):
-  if method == 'mammo':
+  if method == 'imaml_idcg':
       return EffNet_ImageNet(flatten=True, frozen=True, layers=6)
   else:
-      raise AssertionError('Only MAMMO is supported')
+      raise AssertionError('Only imaml_idcg is supported')
 
 def MaxVit(flatten = True, frozen=True, method=None):
-  if method == 'mammo':
+  if method == 'imaml_idcg':
       return MaxVit_ImageNet(flatten=True, frozen=True, layers=6)
   else:
-    raise AssertionError('Only MAMMO is supported')
+    raise AssertionError('Only imaml_idcg is supported')
 
 def squeezenet(flatten=True, frozen=True, method=None):
-  if method == 'mammo':
+  if method == 'imaml_idcg':
     return SqueezeNet_ImageNet(flatten=True, frozen=True, layers=6)
   else:
     return SqueezeNet(flatten)
