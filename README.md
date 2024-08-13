@@ -1,12 +1,37 @@
-# IMAML-IDCG: Gradient-Based Meta-Learning with ImageNet Feature Reusing for Few-Shot Invasive Ductal Carcinoma Grading
+# IMAML-IDCG: Optimization-Based Meta-Learning with ImageNet Feature Reusing for Few-Shot Invasive Ductal Carcinoma Grading
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1eNl11UDVwNMQYEUNjwNUBX4dpBuq-dlE?usp=sharing)
 
-This repo contains the reference source code for the paper [IMAML-IDCG: Gradient-Based Meta-Learning with ImageNet Feature Reusing for Few-Shot Invasive Ductal Carcinoma Grading]
+This repository contains the reference source code for the paper **IMAML-IDCG: Optimization-Based Meta-Learning with ImageNet Feature Reusing for Few-Shot Invasive Ductal Carcinoma Grading**.
 
+## Abstract
+
+Model-Agnostic Meta-Learning (MAML) is a widely used few-shot learning (FSL) technique that reduces reliance on large, labeled datasets in deep learning for medical imaging analysis. However, MAML requires backpropagating through all feature layers for task adaptation, leading to suboptimal computational efficiency. We propose IMAML-IDCG (ImageNet Model-Agnostic Meta-Learning in Invasive Ductal Carcinoma Grading), which enhances computational efficiency for few-shot grading of Invasive Ductal Carcinoma (IDC) through three key techniques: 
+
+1. **ImageNet Feature Reusing**: IMAML-IDCG is initialized with ImageNet pre-trained weights, allowing the reuse of rich feature representations learned from the large-scale ImageNet dataset.
+2. **ImageNet Partial Freezing Strategy**: During the inner optimization loop, only the model’s classifier head layer is optimized, while the last few layers of the model are selectively fine-tuned in the outer loop to enhance efficiency and reduce overfitting.
+3. **Adaptive Inner Learning Rate**: An adaptive learning rate is employed during task adaptation to improve convergence and performance.
+
+We evaluated IMAML-IDCG using the BreaKHis dataset (7,909 images) as the base dataset, and the BCHI (282 images) and PathoIDCG (3,744 images) datasets as the novel datasets. Our empirical results demonstrate that IMAML-IDCG outperforms MAML and other FSL methods in few-shot IDC grading tasks across various cross-magnification domain settings. Notably, IMAML-IDCG achieves a 14.64% improvement over MAML on the BCHI dataset and a 6.04% improvement on the PathoIDCG 40X dataset when meta-trained with the BreaKHis 40X dataset in the 3-way 5-shot scenario.
 
 ## Citation
-If you find our code useful, please consider citing our work using the bibtex:
+
+If you find our code useful, please consider citing our work using the following BibTeX entry:
+
+```bibtex
+@article{voon2024imamlidcg,
+  title={IMAML-IDCG: Optimization-based meta-learning with ImageNet feature reusing for few-shot invasive ductal carcinoma grading},
+  author={Wingates Voon, Yan Chai Hum, Yee Kai Tee, Wun-She Yap, Khin Wee Lai, Humaira Nisar, Hamam Mokayed},
+  journal={Expert Systems with Applications},
+  volume={257},
+  pages={124969},
+  year={2024},
+  publisher={Elsevier},
+  issn={0957-4174},
+  doi={https://doi.org/10.1016/j.eswa.2024.124969},
+  url={https://www.sciencedirect.com/science/article/pii/S0957417424018360}
+}
+```
 
 ## Enviroment
  - Google Colab
