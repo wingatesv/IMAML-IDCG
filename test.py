@@ -130,7 +130,7 @@ if __name__ == '__main__':
         else:
             modelfile   = get_best_file(checkpoint_dir)
         if modelfile is not None:
-            tmp = torch.load(modelfile)
+            tmp = torch.load(modelfile, weights_only=True)
             model.load_state_dict(tmp['state'])
             if hasattr(model, 'task_lr'):
                 model.task_lr = tmp['task_lr']
